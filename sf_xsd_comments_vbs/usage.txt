@@ -1,0 +1,39 @@
+sfxsdcomments.vbs 
+=================
+
+This is windows vb script to generate html documentation from XSD files.
+
+The vb script runs a xslt filters on all XML schemas (XSD) in a folder to generate documentation.
+
+The vb script xslt filters are from xs3p. The latest documentation for xs3p is maintained on the FiForms
+documentation wiki at:  http://wiki.fiforms.org/index.php/Xs3p
+
+In order to use xs3p, you need an XSLT processor, of which msxsl.exe was used.
+
+
+
+Installation
+=============
+Download msxsl.exe from here:  https://www.microsoft.com/en-us/download/details.aspx?id=21714
+xs3p download: http://www.fiforms.org/download/
+
+
+Usage
+======
+For each xsd file, it creates a corresponding html file containing extracted documentation.
+The vb script also recursively descends into subfolders to find XSD files.
+Finally, the vb script generates an index file
+
+1) click on the sfxsdcomments.vbs script
+2) A vbs folder browser dialog will pop up asking for the top folder you want to recusively scan to find and document
+xsd files.
+3) It will recursively scan folders and process each xsd file to generate a html file containing the documentation.
+4) Wait while console screens pop up and then disappear as each xsd file is processed. NOTE THIS CAN TAKE A WHILE
+FOR WELL-DOCUMENTED AND LARGE XSD FILES.
+5) An index.html file is generated in the to level folder that you started the recusive scan in.
+
+
+
+Improvements
+============
+Provide shadow folder dialog for documentation. Currently, its embedded in the xsd folder.
