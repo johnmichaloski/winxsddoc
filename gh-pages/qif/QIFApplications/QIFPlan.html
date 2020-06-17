@@ -1,0 +1,1389 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>XML Schema Documentation</title>
+<meta http-equiv="Content-Type" content="text/xml; charset=iso-8859-1" />
+<style type="text/css">
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* More-configurable styles */
+
+/******** General ********/
+
+/* Document body */
+body {
+   color: Black;
+   background-color: White;
+   font-family: Arial, sans-serif;
+   font-size: 10pt;
+}
+/* Horizontal rules */
+hr {
+   color: black;
+}
+/* Document title */
+h1 {
+   font-size: 18pt;
+   letter-spacing: 2px;
+   border-bottom: 1px #ccc solid;
+   padding-top: 5px;
+   padding-bottom: 5px;
+}
+/* Main section headers */
+h2 {
+   font-size: 14pt;
+   letter-spacing: 1px;
+}
+/* Sub-section headers */
+h3, h3 a, h3 span {
+   font-size: 12pt;
+   font-weight: bold;
+   color: black;
+}
+/* Table displaying the properties of the schema components or the
+   schema document itself */
+table.properties th, table.properties th a {
+   color: black;
+   background-color: #F99; /* Pink */
+}
+table.properties td {
+   background-color: #eee; /* Gray */
+}
+
+
+/******** Table of Contents Section ********/
+
+/* Controls for switching between printing and viewing modes */
+div#printerControls {
+   color: #963; /* Orange-brown */
+}
+/* Controls that can collapse or expand all XML Instance
+   Representation and Schema Component Representation boxes */
+div#globalControls {
+   border: 2px solid #999;
+}
+
+
+/******** Schema Document Properties Section ********/
+
+/* Table displaying the namespaces declared in the schema */
+table.namespaces th {
+   background-color: #ccc;
+}
+table.namespaces td {
+   background-color: #eee;
+}
+/* Target namespace of the schema */
+span.targetNS {
+   color: #06C;
+   font-weight: bold;
+}
+
+
+/******** Schema Components' Sections ********/
+
+/* Name of schema component */
+.name {
+   color: #F93; /* Orange */
+}
+
+/* Hierarchy table */
+table.hierarchy {
+   border: 2px solid #999; /* Gray */
+}
+
+/* XML Instance Representation table */
+div.sample div.contents {
+   border: 2px dashed black;
+}
+
+/* Schema Component Representation table */
+div.schemaComponent div.contents {
+   border: 2px black solid;
+}
+
+
+/******** Glossary Section ********/
+
+/* Glossary Terms */
+.glossaryTerm {
+   color: #036; /* Blue */
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Printer-version styles */
+
+@media print {
+
+/* Ensures that controls are hidden when printing */
+div#printerControls {
+   visibility: hidden;
+}
+div#globalControls {
+   visibility: hidden;
+}
+#legend {
+   display: none;
+}
+#legendTOC {
+   display: none;
+}
+#glossary {
+   display: none;
+}
+#glossaryTOC {
+   display: none;
+}
+
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Base styles */
+
+/******** General ********/
+
+/* Unordered lists */
+ul {
+   margin-left: 1.5em;
+   margin-bottom: 0em;
+}
+/* Tables */
+table {
+   margin-top: 10px;
+   margin-bottom: 10px;
+   margin-left: 2px;
+   margin-right: 2px;
+}
+table th, table td {
+   font-size: 10pt;
+   vertical-align: top;
+   padding-top: 3px;
+   padding-bottom: 3px;
+   padding-left: 10px;
+   padding-right: 10px;
+}
+table th {
+   font-weight: bold;
+   text-align: left;
+}
+/* Table displaying the properties of the schema components or the
+   schema document itself */
+table.properties {
+   width: 90%;
+}
+table.properties th {
+   width: 30%;
+}
+/* Boxes that can make its content appear and disappear*/
+div.box {
+   margin: 1em;
+}
+   /* Box caption */
+div.box span.caption {
+   font-weight: bold;
+}
+   /* Button to open and close the box */
+div.box input.control {
+   width: 1.4em;
+   height: 1.4em;
+   text-align: center;
+   vertical-align: middle;
+   font-size: 11pt;
+}
+   /* Box contents */
+div.box div.contents {
+   margin-top: 3px;
+}
+
+
+/******** Table of Contents Section ********/
+
+/* Controls for switching between printing and viewing modes */
+div#printerControls {
+   white-space: nowrap;
+   font-weight: bold;
+   padding: 5px;
+   margin: 5px;
+}
+/* Controls that can collapse or expand all XML Instance
+   Representation and Schema Component Representation boxes */
+div#globalControls {
+   padding: 10px;
+   margin: 5px;
+}
+
+
+/******** Schema Document Properties Section ********/
+
+/* Table displaying the namespaces declared in the schema */
+table.namespaces th {
+}
+table.namespaces td {
+}
+/* Target namespace of the schema */
+span.targetNS {
+}
+
+
+/******** Schema Components' Sections ********/
+
+/* Name of schema component */
+.name {
+}
+
+/* Hierarchy table */
+table.hierarchy {
+   width: 90%;
+}
+table.hierarchy th {
+   font-weight: normal;
+   font-style: italic;
+   width: 20%;
+}
+table.hierarchy th, table.hierarchy td {
+   padding: 5px;
+}
+
+/* XML Instance Representation table */
+div.sample {
+   width: 90%;
+}
+div.sample div.contents {
+   padding: 5px;
+   font-family: Courier New, sans-serif;
+   font-size: 10pt;
+}
+   /* Normal elements and attributes */
+div.sample div.contents, div.sample div.contents a {
+   color: black;
+}
+   /* Group Headers */
+div.sample div.contents .group, div.sample div.contents .group a {
+   color: #999; /* Light gray */
+}
+   /* Type Information */
+div.sample div.contents .type, div.sample div.contents .type a {
+   color: #999; /* Light gray */
+}
+   /* Occurrence Information */
+div.sample div.contents .occurs, div.sample div.contents .occurs a {
+   color: #999; /* Light gray */
+}
+   /* Fixed values */
+div.sample div.contents .fixed {
+   color: #063; /* Green */
+   font-weight: bold;
+}
+   /* Simple type constraints */
+div.sample div.contents .constraint, div.sample div.contents .constraint a {
+   color: #999; /* Light gray */
+}
+   /* Elements and attributes inherited from base type */
+div.sample div.contents .inherited, div.sample div.contents .inherited a {
+   color: #666; /* Dark gray */
+}
+   /* Elements and attributes added to or changed from base type */
+div.sample div.contents .newFields {
+   font-weight: bold;
+}
+   /* Other type of information */
+div.sample div.contents .other, div.sample div.contents .other a {
+   color: #369; /* Blue */
+   font-style: italic;
+}
+   /* Link to open up window displaying documentation */
+div.sample div.contents a.documentation {
+   text-decoration: none;
+   padding-left: 3px;
+   padding-right: 3px;
+   padding-top: 0px;
+   padding-bottom: 0px;
+   font-weight: bold;
+   font-size: 11pt;
+   background-color: #FFD;
+   color: #069;
+}
+   /* Invert colors when hovering over link to open up window 
+      displaying documentation */
+div.sample div.contents a.documentation:hover {
+   color: #FFD;
+   background-color: #069;
+}
+
+/* Schema Component Representation table */
+div.schemaComponent {
+   width: 90%;
+}
+div.schemaComponent div.contents {
+   font-family: Courier New, sans-serif;
+   font-size: 10pt;
+   padding: 5px;
+}
+   /* Syntax characters */
+div.schemaComponent div.contents {
+   color: #00f; /* blue */
+}
+   /* Element and attribute tags */
+div.schemaComponent div.contents .scTag {
+   color: #933; /* maroon */
+}
+   /* Element and attribute content */
+div.schemaComponent div.contents .scContent, div.schemaComponent div.contents .scContent a {
+   color: black;
+   font-weight: bold;
+}
+   /* Comments */
+div.schemaComponent div.contents .comment {
+   color: #999; /* Light gray */
+}
+
+/******** Legend Section ********/
+
+div#legend table, div#legend div {
+   margin-bottom: 3px;
+}
+div#legend div.hint {
+   color: #999; /* Light gray */
+   width: 90%;
+   margin-left: 1em;
+   margin-bottom: 2em;
+}
+
+
+/******** Glossary Section ********/
+
+/* Glossary Terms */
+.glossaryTerm {
+   font-weight: bold;
+}
+
+
+/******** Footer ********/
+
+.footer {
+   font-size: 8pt;
+}
+</style>
+<script type="text/javascript">
+<!--
+/* IDs of XML Instance Representation boxes */
+var xiBoxes = new Array('element_Plan_xibox', 'type_PlanType_xibox', 'type_PlanElementBaseType_xibox', 'type_UnnumberedPlanElementsType_xibox', 'type_NumberedPlanElementType_xibox', 'type_NumberedPlanElementsType_xibox', 'type_ActionBaseType_xibox', 'type_MeasureEvaluateAllActionType_xibox', 'type_HaltActionType_xibox', 'type_MeasureEvaluateSpecifiedActionType_xibox', 'type_EvaluateSpecifiedCharacteristicsActionType_xibox', 'type_MeasureSpecifiedFeaturesActionType_xibox', 'type_MeasurandBaseType_xibox', 'type_EvaluateCharacteristicMeasurandType_xibox', 'type_EstablishDatumMeasurandType_xibox', 'type_MeasureSpecifiedMeasurandsActionType_xibox', 'type_MeasurandsType_xibox', 'type_ActionMethodBaseType_xibox', 'type_MeasureFeatureMethodBaseType_xibox', 'type_AutocollimatorMeasureFeatureMethodType_xibox', 'type_CalibratedComparatorMeasureFeatureMethodType_xibox', 'type_ComputedTomographyMeasureFeatureMethodType_xibox', 'type_CoordinateMeasureFeatureMethodType_xibox', 'type_ExternalReferenceMeasureFeatureMethodType_xibox', 'type_GageMeasureFeatureMethodType_xibox', 'type_LaserRadarMeasureFeatureMethodType_xibox', 'type_LaserTrackerMeasureFeatureMethodType_xibox', 'type_ManualMeasureFeatureMethodType_xibox', 'type_MicroscopeMeasureFeatureMethodType_xibox', 'type_OtherMeasureFeatureMethodType_xibox', 'type_ProfileProjectorMeasureFeatureMethodType_xibox', 'type_TheodoliteMeasureFeatureMethodType_xibox', 'type_UniversalLengthMeasureFeatureMethodType_xibox', 'type_ActionMethodsType_xibox', 'type_MeasureActionGroupFunctionEnumType_xibox', 'type_MeasureActionGroupFunctionType_xibox', 'type_ActionGroupBaseType_xibox', 'type_OrderedActionGroupType_xibox', 'type_UnorderedActionGroupType_xibox', 'type_PartiallyOrderedActionGroupType_xibox', 'type_StepWithPredecessorsType_xibox', 'type_StepsWithPredecessorsType_xibox', 'type_PredecessorsType_xibox', 'type_OneOfActionGroupType_xibox', 'type_PickSomeActionGroupType_xibox', 'type_IfActionGroupType_xibox', 'type_TestAndPlanElementType_xibox', 'type_ElseDoType_xibox', 'type_WhileActionGroupType_xibox', 'type_WorkInstructionBaseType_xibox', 'type_TextInstructionType_xibox', 'type_DocumentFileInstructionType_xibox', 'type_ImageInstructionType_xibox', 'type_VariableDeclarationType_xibox', 'type_LocalVariablesType_xibox', 'type_VariableSetType_xibox', 'type_VariableValueType_xibox', 'type_ArithmeticParameterValueType_xibox', 'type_TokenParameterValueType_xibox', 'type_VideoInstructionType_xibox', 'type_WorkInstructionsType_xibox', 'element_PlanRoot_xibox', 'element_OrderedPlanRoot_xibox', 'element_UnorderedPlanRoot_xibox', 'element_PartiallyOrderedPlanRoot_xibox', 'element_OneOfPlanRoot_xibox', 'element_PickSomePlanRoot_xibox', 'element_PlanElement_xibox', 'element_OrderedActionGroup_xibox', 'element_UnorderedActionGroup_xibox', 'element_PartiallyOrderedActionGroup_xibox', 'element_OneOfActionGroup_xibox', 'element_PickSomeActionGroup_xibox', 'element_MeasureEvaluateAll_xibox', 'element_MeasureEvaluateSpecified_xibox', 'element_EvaluateSpecifiedCharacteristics_xibox', 'element_Halt_xibox', 'element_MeasureSpecifiedFeatures_xibox', 'element_MeasureSpecifiedMeasurands_xibox', 'element_IfActionGroup_xibox', 'element_WhileActionGroup_xibox', 'element_VariableSet_xibox', 'element_WorkInstruction_xibox', 'element_TextInstruction_xibox', 'element_DocumentFileInstruction_xibox', 'element_ImageInstruction_xibox', 'element_VideoInstruction_xibox', 'element_ActionMethod_xibox', 'element_AutocollimatorMeasureFeatureMethod_xibox', 'element_CalibratedComparatorMeasureFeatureMethod_xibox', 'element_CoordinateMeasureFeatureMethod_xibox', 'element_ComputedTomographyMeasureFeatureMethod_xibox', 'element_ExternalReferenceMeasureFeatureMethod_xibox', 'element_GageMeasureFeatureMethod_xibox', 'element_LaserRadarMeasureFeatureMethod_xibox', 'element_LaserTrackerMeasureFeatureMethod_xibox', 'element_ManualMeasureFeatureMethod_xibox', 'element_MicroscopeMeasureFeatureMethod_xibox', 'element_ProfileProjectorMeasureFeatureMethod_xibox', 'element_TheodoliteMeasureFeatureMethod_xibox', 'element_UniversalLengthMeasureFeatureMethod_xibox', 'element_OtherMeasureFeatureMethod_xibox', 'element_Measurand_xibox', 'element_EvaluateCharacteristicMeasurand_xibox', 'element_EstablishDatumMeasurand_xibox', 'element_VariableValue_xibox', 'element_ArithmeticParameterValue_xibox', 'element_TokenParameterValue_xibox');
+/* IDs of Schema Component Representation boxes */
+var scBoxes = new Array('schema_scbox', 'element_Plan_scbox', 'type_PlanType_scbox', 'type_PlanElementBaseType_scbox', 'type_UnnumberedPlanElementsType_scbox', 'type_NumberedPlanElementType_scbox', 'type_NumberedPlanElementsType_scbox', 'type_ActionBaseType_scbox', 'type_MeasureEvaluateAllActionType_scbox', 'type_HaltActionType_scbox', 'type_MeasureEvaluateSpecifiedActionType_scbox', 'type_EvaluateSpecifiedCharacteristicsActionType_scbox', 'type_MeasureSpecifiedFeaturesActionType_scbox', 'type_MeasurandBaseType_scbox', 'type_EvaluateCharacteristicMeasurandType_scbox', 'type_EstablishDatumMeasurandType_scbox', 'type_MeasureSpecifiedMeasurandsActionType_scbox', 'type_MeasurandsType_scbox', 'type_ActionMethodBaseType_scbox', 'type_MeasureFeatureMethodBaseType_scbox', 'type_AutocollimatorMeasureFeatureMethodType_scbox', 'type_CalibratedComparatorMeasureFeatureMethodType_scbox', 'type_ComputedTomographyMeasureFeatureMethodType_scbox', 'type_CoordinateMeasureFeatureMethodType_scbox', 'type_ExternalReferenceMeasureFeatureMethodType_scbox', 'type_GageMeasureFeatureMethodType_scbox', 'type_LaserRadarMeasureFeatureMethodType_scbox', 'type_LaserTrackerMeasureFeatureMethodType_scbox', 'type_ManualMeasureFeatureMethodType_scbox', 'type_MicroscopeMeasureFeatureMethodType_scbox', 'type_OtherMeasureFeatureMethodType_scbox', 'type_ProfileProjectorMeasureFeatureMethodType_scbox', 'type_TheodoliteMeasureFeatureMethodType_scbox', 'type_UniversalLengthMeasureFeatureMethodType_scbox', 'type_ActionMethodsType_scbox', 'type_MeasureActionGroupFunctionEnumType_scbox', 'type_MeasureActionGroupFunctionType_scbox', 'type_ActionGroupBaseType_scbox', 'type_OrderedActionGroupType_scbox', 'type_UnorderedActionGroupType_scbox', 'type_PartiallyOrderedActionGroupType_scbox', 'type_StepWithPredecessorsType_scbox', 'type_StepsWithPredecessorsType_scbox', 'type_PredecessorsType_scbox', 'type_OneOfActionGroupType_scbox', 'type_PickSomeActionGroupType_scbox', 'type_IfActionGroupType_scbox', 'type_TestAndPlanElementType_scbox', 'type_ElseDoType_scbox', 'type_WhileActionGroupType_scbox', 'type_WorkInstructionBaseType_scbox', 'type_TextInstructionType_scbox', 'type_DocumentFileInstructionType_scbox', 'type_ImageInstructionType_scbox', 'type_VariableDeclarationType_scbox', 'type_LocalVariablesType_scbox', 'type_VariableSetType_scbox', 'type_VariableValueType_scbox', 'type_ArithmeticParameterValueType_scbox', 'type_TokenParameterValueType_scbox', 'type_VideoInstructionType_scbox', 'type_WorkInstructionsType_scbox', 'element_PlanRoot_scbox', 'element_OrderedPlanRoot_scbox', 'element_UnorderedPlanRoot_scbox', 'element_PartiallyOrderedPlanRoot_scbox', 'element_OneOfPlanRoot_scbox', 'element_PickSomePlanRoot_scbox', 'element_PlanElement_scbox', 'element_OrderedActionGroup_scbox', 'element_UnorderedActionGroup_scbox', 'element_PartiallyOrderedActionGroup_scbox', 'element_OneOfActionGroup_scbox', 'element_PickSomeActionGroup_scbox', 'element_MeasureEvaluateAll_scbox', 'element_MeasureEvaluateSpecified_scbox', 'element_EvaluateSpecifiedCharacteristics_scbox', 'element_Halt_scbox', 'element_MeasureSpecifiedFeatures_scbox', 'element_MeasureSpecifiedMeasurands_scbox', 'element_IfActionGroup_scbox', 'element_WhileActionGroup_scbox', 'element_VariableSet_scbox', 'element_WorkInstruction_scbox', 'element_TextInstruction_scbox', 'element_DocumentFileInstruction_scbox', 'element_ImageInstruction_scbox', 'element_VideoInstruction_scbox', 'element_ActionMethod_scbox', 'element_AutocollimatorMeasureFeatureMethod_scbox', 'element_CalibratedComparatorMeasureFeatureMethod_scbox', 'element_CoordinateMeasureFeatureMethod_scbox', 'element_ComputedTomographyMeasureFeatureMethod_scbox', 'element_ExternalReferenceMeasureFeatureMethod_scbox', 'element_GageMeasureFeatureMethod_scbox', 'element_LaserRadarMeasureFeatureMethod_scbox', 'element_LaserTrackerMeasureFeatureMethod_scbox', 'element_ManualMeasureFeatureMethod_scbox', 'element_MicroscopeMeasureFeatureMethod_scbox', 'element_ProfileProjectorMeasureFeatureMethod_scbox', 'element_TheodoliteMeasureFeatureMethod_scbox', 'element_UniversalLengthMeasureFeatureMethod_scbox', 'element_OtherMeasureFeatureMethod_scbox', 'element_Measurand_scbox', 'element_EvaluateCharacteristicMeasurand_scbox', 'element_EstablishDatumMeasurand_scbox', 'element_VariableValue_scbox', 'element_ArithmeticParameterValue_scbox', 'element_TokenParameterValue_scbox');
+
+/**
+ * Can get the ID of the button controlling
+ * a collapseable box by concatenating
+ * this string onto the ID of the box itself.
+ */
+var B_SFIX = "_button";
+
+/**
+ * Counter of documentation windows
+ * Used to give each window a unique name
+ */
+var windowCount = 0;
+
+/**
+ * Returns an element in the current HTML document.
+ * 
+ * @param elementID Identifier of HTML element
+ * @return               HTML element object
+ */
+function getElementObject(elementID) {
+    var elemObj = null;
+    if (document.getElementById) {
+        elemObj = document.getElementById(elementID);
+    }
+    return elemObj;
+}             
+
+/**
+ * Closes a collapseable box.
+ * 
+ * @param boxObj       Collapseable box
+ * @param buttonObj Button controlling box
+ */
+function closeBox(boxObj, buttonObj) {
+  if (boxObj == null || buttonObj == null) {
+     // Box or button not found
+  } else {
+     // Change 'display' CSS property of box
+     boxObj.style.display="none";
+
+     // Change text of button 
+     if (boxObj.style.display=="none") {
+        buttonObj.value=" + ";
+     }
+  }
+}
+
+/**
+ * Opens a collapseable box.
+ * 
+ * @param boxObj       Collapseable box
+ * @param buttonObj Button controlling box
+ */
+function openBox(boxObj, buttonObj) {
+  if (boxObj == null || buttonObj == null) {
+     // Box or button not found
+  } else {
+     // Change 'display' CSS property of box
+     boxObj.style.display="block";
+
+     // Change text of button
+     if (boxObj.style.display=="block") {
+        buttonObj.value=" - ";
+     }
+  }
+}
+
+/**
+ * Sets the state of a collapseable box.
+ * 
+ * @param boxID Identifier of box
+ * @param open If true, box is "opened",
+ *             Otherwise, box is "closed".
+ */
+function setState(boxID, open) {
+  var boxObj = getElementObject(boxID);
+  var buttonObj = getElementObject(boxID+B_SFIX);
+  if (boxObj == null || buttonObj == null) {
+     // Box or button not found
+  } else if (open) {
+     openBox(boxObj, buttonObj);
+     // Make button visible
+     buttonObj.style.display="inline";
+  } else {
+     closeBox(boxObj, buttonObj);
+     // Make button visible
+     buttonObj.style.display="inline";
+  }
+}
+
+/**
+ * Switches the state of a collapseable box, e.g.
+ * if it's opened, it'll be closed, and vice versa.
+ * 
+ * @param boxID Identifier of box
+ */
+function switchState(boxID) {
+  var boxObj = getElementObject(boxID);
+  var buttonObj = getElementObject(boxID+B_SFIX);
+  if (boxObj == null || buttonObj == null) {
+     // Box or button not found
+  } else if (boxObj.style.display=="none") {
+     // Box is closed, so open it
+     openBox(boxObj, buttonObj);
+  } else if (boxObj.style.display=="block") {
+     // Box is opened, so close it
+     closeBox(boxObj, buttonObj);
+  }
+}
+
+/**
+ * Closes all boxes in a given list.
+ * 
+ * @param boxList Array of box IDs
+ */
+function collapseAll(boxList) {
+  var idx;
+  for (idx = 0; idx < boxList.length; idx++) {
+     var boxObj = getElementObject(boxList[idx]);
+     var buttonObj = getElementObject(boxList[idx]+B_SFIX);
+     closeBox(boxObj, buttonObj);
+  }
+}
+
+/**
+ * Open all boxes in a given list.
+ * 
+ * @param boxList Array of box IDs
+ */
+function expandAll(boxList) {
+  var idx;
+  for (idx = 0; idx < boxList.length; idx++) {
+     var boxObj = getElementObject(boxList[idx]);
+     var buttonObj = getElementObject(boxList[idx]+B_SFIX);
+     openBox(boxObj, buttonObj);
+  }
+}
+
+/**
+ * Makes all the control buttons of boxes appear.
+ * 
+ * @param boxList Array of box IDs
+ */
+function viewControlButtons(boxList) {
+    var idx;
+    for (idx = 0; idx < boxList.length; idx++) {
+        buttonObj = getElementObject(boxList[idx]+B_SFIX);
+        if (buttonObj != null) {
+            buttonObj.style.display = "inline";
+        }
+    }
+}
+
+/**
+ * Makes all the control buttons of boxes disappear.
+ * 
+ * @param boxList Array of box IDs
+ */
+function hideControlButtons(boxList) {
+    var idx;
+    for (idx = 0; idx < boxList.length; idx++) {
+        buttonObj = getElementObject(boxList[idx]+B_SFIX);
+        if (buttonObj != null) {
+            buttonObj.style.display = "none";
+        }
+    }
+}
+
+/**
+ * Sets the page for either printing mode
+ * or viewing mode. In printing mode, the page
+ * is made to be more readable when printing it out.
+ * In viewing mode, the page is more browsable.
+ *
+ * @param isPrinterVersion If true, display in
+ *                                 printing mode; otherwise, 
+ *                                 in viewing mode
+ */
+function displayMode(isPrinterVersion) {
+    var obj;
+    if (isPrinterVersion) {
+        // Hide global control buttons
+        obj = getElementObject("globalControls");
+        if (obj != null) {
+            obj.style.visibility = "hidden";
+        }
+        // Hide Legend
+        obj = getElementObject("legend");
+        if (obj != null) {
+            obj.style.display = "none";
+        }
+        obj = getElementObject("legendTOC");
+        if (obj != null) {
+            obj.style.display = "none";
+        }
+        // Hide Glossary
+        obj = getElementObject("glossary");
+        if (obj != null) {
+            obj.style.display = "none";
+        }
+        obj = getElementObject("glossaryTOC");
+        if (obj != null) {
+            obj.style.display = "none";
+        }
+
+        // Expand all XML Instance Representation tables
+        expandAll(xiBoxes);
+        // Expand all Schema Component Representation tables
+        expandAll(scBoxes);
+
+        // Hide Control buttons
+        hideControlButtons(xiBoxes);
+        hideControlButtons(scBoxes);
+    } else {
+        // View global control buttons
+        obj = getElementObject("globalControls");
+        if (obj != null) {
+            obj.style.visibility = "visible";
+        }
+        // View Legend
+        obj = getElementObject("legend");
+        if (obj != null) {
+            obj.style.display = "block";
+        }
+        obj = getElementObject("legendTOC");
+        if (obj != null) {
+            obj.style.display = "block";
+        }
+        // View Glossary
+        obj = getElementObject("glossary");
+        if (obj != null) {
+            obj.style.display = "block";
+        }
+        obj = getElementObject("glossaryTOC");
+        if (obj != null) {
+            obj.style.display = "block";
+        }
+
+        // Expand all XML Instance Representation tables
+        expandAll(xiBoxes);
+        // Collapse all Schema Component Representation tables
+        collapseAll(scBoxes);
+
+        // View Control buttons
+        viewControlButtons(xiBoxes);
+        viewControlButtons(scBoxes);
+    }
+}
+
+/**
+ * Opens up a window displaying the documentation
+ * of a schema component in the XML Instance
+ * Representation table.
+ * 
+ * @param compDesc      Description of schema component 
+ * @param compName      Name of schema component 
+ * @param docTextArray Array containing the paragraphs 
+ *                           of the new document
+ */
+function viewDocumentation(compDesc, compName, docTextArray) {
+  var width = 400;
+  var height = 200;
+  var locX = 100;
+  var locY = 200;
+
+  /* Generate content */
+  var actualText = "<html>";
+  actualText += "<head><title>";
+  actualText += compDesc;
+  if (compName != '') {
+     actualText += ": " + compName;
+  }
+  actualText += "</title></head>";
+  actualText += "<body bgcolor=\"#FFFFEE\">";
+  // Title
+  actualText += "<p style=\"font-family: Arial, sans-serif; font-size: 12pt; font-weight: bold; letter-spacing:1px;\">";
+  actualText += compDesc;
+  if (compName != '') {
+     actualText += ": <span style=\"color:#006699\">" + compName + "</span>";
+  }
+  actualText += "</p>";
+  // Documentation
+  var idx;
+  for (idx = 0; idx < docTextArray.length; idx++) {
+     actualText += "<p style=\"font-family: Arial, sans-serif; font-size: 10pt;\">" + docTextArray[idx] + "</p>";
+  }
+  // Link to close window
+  actualText += "<a href=\"javascript:void(0)\" onclick=\"window.close();\" style=\"font-family: Arial, sans-serif; font-size: 8pt;\">Close</a>";
+  actualText += "</body></html>";
+
+  /* Display window */
+  windowCount++;
+  var docWindow = window.open("", "documentation"+windowCount, "toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable,alwaysRaised,dependent,titlebar=no,width="+width+",height="+height+",screenX="+locX+",left="+locX+",screenY="+locY+",top="+locY);
+  docWindow.document.write(actualText);
+}
+
+// -->
+</script>
+</head>
+<body>
+<h1><a name="top">XML Schema Documentation</a></h1>
+<div style="float: right;">
+<div id="printerControls" style="display:none;">
+<input type="checkbox" onclick="displayMode(this.checked)" />Printer-friendly Version</div>
+<script type="text/javascript">
+<!--
+
+var pc = getElementObject("printerControls");
+if (pc != null) {
+   pc.style.display="block";
+}
+               
+// -->
+</script>
+<div id="globalControls" style="display:none">
+<strong>XML Instance Representation:</strong><br />
+<span style="margin-left: 1em; white-space: nowrap">[ <a href="javascript:void(0)" onclick="expandAll(xiBoxes)">Expand All</a> | <a href="javascript:void(0)" onclick="collapseAll(xiBoxes)">Collapse All</a> ]</span><br /><br />
+<strong>Schema Component Representation:</strong><br />
+<span style="margin-left: 1em; white-space: nowrap">[ <a href="javascript:void(0)" onclick="expandAll(scBoxes)">Expand All</a> | <a href="javascript:void(0)" onclick="collapseAll(scBoxes)">Collapse All</a> ]</span>
+</div>
+<script type="text/javascript">
+<!--
+
+var gc = getElementObject("globalControls");
+if (gc != null) {
+   gc.style.display="block";
+}
+               
+// -->
+</script>
+</div>
+<h2>Table of Contents</h2>
+<ul>
+<li>
+<a href="#SchemaProperties">Schema Document Properties</a>
+</li>
+<li><a href="#SchemaDeclarations">Global Declarations</a>
+<ul>
+<li>
+<a href="#element_ActionMethod">Element: <strong>ActionMethod</strong>
+</a>
+</li>
+<li>
+<a href="#element_ArithmeticParameterValue">Element: <strong>ArithmeticParameterValue</strong>
+</a>
+</li>
+<li>
+<a href="#element_AutocollimatorMeasureFeatureMethod">Element: <strong>AutocollimatorMeasureFeatureMethod</strong>
+</a>
+</li>
+<li>
+<a href="#element_CalibratedComparatorMeasureFeatureMethod">Element: <strong>CalibratedComparatorMeasureFeatureMethod</strong>
+</a>
+</li>
+<li>
+<a href="#element_ComputedTomographyMeasureFeatureMethod">Element: <strong>ComputedTomographyMeasureFeatureMethod</strong>
+</a>
+</li>
+<li>
+<a href="#element_CoordinateMeasureFeatureMethod">Element: <strong>CoordinateMeasureFeatureMethod</strong>
+</a>
+</li>
+<li>
+<a href="#element_DocumentFileInstruction">Element: <strong>DocumentFileInstruction</strong>
+</a>
+</li>
+<li>
+<a href="#element_EstablishDatumMeasurand">Element: <strong>EstablishDatumMeasurand</strong>
+</a>
+</li>
+<li>
+<a href="#element_EvaluateCharacteristicMeasurand">Element: <strong>EvaluateCharacteristicMeasurand</strong>
+</a>
+</li>
+<li>
+<a href="#element_EvaluateSpecifiedCharacteristics">Element: <strong>EvaluateSpecifiedCharacteristics</strong>
+</a>
+</li>
+<li>
+<a href="#element_ExternalReferenceMeasureFeatureMethod">Element: <strong>ExternalReferenceMeasureFeatureMethod</strong>
+</a>
+</li>
+<li>
+<a href="#element_GageMeasureFeatureMethod">Element: <strong>GageMeasureFeatureMethod</strong>
+</a>
+</li>
+<li>
+<a href="#element_Halt">Element: <strong>Halt</strong>
+</a>
+</li>
+<li>
+<a href="#element_IfActionGroup">Element: <strong>IfActionGroup</strong>
+</a>
+</li>
+<li>
+<a href="#element_ImageInstruction">Element: <strong>ImageInstruction</strong>
+</a>
+</li>
+<li>
+<a href="#element_LaserRadarMeasureFeatureMethod">Element: <strong>LaserRadarMeasureFeatureMethod</strong>
+</a>
+</li>
+<li>
+<a href="#element_LaserTrackerMeasureFeatureMethod">Element: <strong>LaserTrackerMeasureFeatureMethod</strong>
+</a>
+</li>
+<li>
+<a href="#element_ManualMeasureFeatureMethod">Element: <strong>ManualMeasureFeatureMethod</strong>
+</a>
+</li>
+<li>
+<a href="#element_Measurand">Element: <strong>Measurand</strong>
+</a>
+</li>
+<li>
+<a href="#element_MeasureEvaluateAll">Element: <strong>MeasureEvaluateAll</strong>
+</a>
+</li>
+<li>
+<a href="#element_MeasureEvaluateSpecified">Element: <strong>MeasureEvaluateSpecified</strong>
+</a>
+</li>
+<li>
+<a href="#element_MeasureSpecifiedFeatures">Element: <strong>MeasureSpecifiedFeatures</strong>
+</a>
+</li>
+<li>
+<a href="#element_MeasureSpecifiedMeasurands">Element: <strong>MeasureSpecifiedMeasurands</strong>
+</a>
+</li>
+<li>
+<a href="#element_MicroscopeMeasureFeatureMethod">Element: <strong>MicroscopeMeasureFeatureMethod</strong>
+</a>
+</li>
+<li>
+<a href="#element_OneOfActionGroup">Element: <strong>OneOfActionGroup</strong>
+</a>
+</li>
+<li>
+<a href="#element_OneOfPlanRoot">Element: <strong>OneOfPlanRoot</strong>
+</a>
+</li>
+<li>
+<a href="#element_OrderedActionGroup">Element: <strong>OrderedActionGroup</strong>
+</a>
+</li>
+<li>
+<a href="#element_OrderedPlanRoot">Element: <strong>OrderedPlanRoot</strong>
+</a>
+</li>
+<li>
+<a href="#element_OtherMeasureFeatureMethod">Element: <strong>OtherMeasureFeatureMethod</strong>
+</a>
+</li>
+<li>
+<a href="#element_PartiallyOrderedActionGroup">Element: <strong>PartiallyOrderedActionGroup</strong>
+</a>
+</li>
+<li>
+<a href="#element_PartiallyOrderedPlanRoot">Element: <strong>PartiallyOrderedPlanRoot</strong>
+</a>
+</li>
+<li>
+<a href="#element_PickSomeActionGroup">Element: <strong>PickSomeActionGroup</strong>
+</a>
+</li>
+<li>
+<a href="#element_PickSomePlanRoot">Element: <strong>PickSomePlanRoot</strong>
+</a>
+</li>
+<li>
+<a href="#element_Plan">Element: <strong>Plan</strong>
+</a>
+</li>
+<li>
+<a href="#element_PlanElement">Element: <strong>PlanElement</strong>
+</a>
+</li>
+<li>
+<a href="#element_PlanRoot">Element: <strong>PlanRoot</strong>
+</a>
+</li>
+<li>
+<a href="#element_ProfileProjectorMeasureFeatureMethod">Element: <strong>ProfileProjectorMeasureFeatureMethod</strong>
+</a>
+</li>
+<li>
+<a href="#element_TextInstruction">Element: <strong>TextInstruction</strong>
+</a>
+</li>
+<li>
+<a href="#element_TheodoliteMeasureFeatureMethod">Element: <strong>TheodoliteMeasureFeatureMethod</strong>
+</a>
+</li>
+<li>
+<a href="#element_TokenParameterValue">Element: <strong>TokenParameterValue</strong>
+</a>
+</li>
+<li>
+<a href="#element_UniversalLengthMeasureFeatureMethod">Element: <strong>UniversalLengthMeasureFeatureMethod</strong>
+</a>
+</li>
+<li>
+<a href="#element_UnorderedActionGroup">Element: <strong>UnorderedActionGroup</strong>
+</a>
+</li>
+<li>
+<a href="#element_UnorderedPlanRoot">Element: <strong>UnorderedPlanRoot</strong>
+</a>
+</li>
+<li>
+<a href="#element_VariableSet">Element: <strong>VariableSet</strong>
+</a>
+</li>
+<li>
+<a href="#element_VariableValue">Element: <strong>VariableValue</strong>
+</a>
+</li>
+<li>
+<a href="#element_VideoInstruction">Element: <strong>VideoInstruction</strong>
+</a>
+</li>
+<li>
+<a href="#element_WhileActionGroup">Element: <strong>WhileActionGroup</strong>
+</a>
+</li>
+<li>
+<a href="#element_WorkInstruction">Element: <strong>WorkInstruction</strong>
+</a>
+</li>
+</ul>
+</li>
+<li><a href="#SchemaDefinitions">Global Definitions</a>
+<ul>
+<li>
+<a href="#type_ActionBaseType">Complex Type: <strong>ActionBaseType</strong>
+</a>
+</li>
+<li>
+<a href="#type_ActionGroupBaseType">Complex Type: <strong>ActionGroupBaseType</strong>
+</a>
+</li>
+<li>
+<a href="#type_ActionMethodBaseType">Complex Type: <strong>ActionMethodBaseType</strong>
+</a>
+</li>
+<li>
+<a href="#type_ActionMethodsType">Complex Type: <strong>ActionMethodsType</strong>
+</a>
+</li>
+<li>
+<a href="#type_ArithmeticParameterValueType">Complex Type: <strong>ArithmeticParameterValueType</strong>
+</a>
+</li>
+<li>
+<a href="#type_AutocollimatorMeasureFeatureMethodType">Complex Type: <strong>AutocollimatorMeasureFeatureMethodType</strong>
+</a>
+</li>
+<li>
+<a href="#type_CalibratedComparatorMeasureFeatureMethodType">Complex Type: <strong>CalibratedComparatorMeasureFeatureMethodType</strong>
+</a>
+</li>
+<li>
+<a href="#type_ComputedTomographyMeasureFeatureMethodType">Complex Type: <strong>ComputedTomographyMeasureFeatureMethodType</strong>
+</a>
+</li>
+<li>
+<a href="#type_CoordinateMeasureFeatureMethodType">Complex Type: <strong>CoordinateMeasureFeatureMethodType</strong>
+</a>
+</li>
+<li>
+<a href="#type_DocumentFileInstructionType">Complex Type: <strong>DocumentFileInstructionType</strong>
+</a>
+</li>
+<li>
+<a href="#type_ElseDoType">Complex Type: <strong>ElseDoType</strong>
+</a>
+</li>
+<li>
+<a href="#type_EstablishDatumMeasurandType">Complex Type: <strong>EstablishDatumMeasurandType</strong>
+</a>
+</li>
+<li>
+<a href="#type_EvaluateCharacteristicMeasurandType">Complex Type: <strong>EvaluateCharacteristicMeasurandType</strong>
+</a>
+</li>
+<li>
+<a href="#type_EvaluateSpecifiedCharacteristicsActionType">Complex Type: <strong>EvaluateSpecifiedCharacteristicsActionType</strong>
+</a>
+</li>
+<li>
+<a href="#type_ExternalReferenceMeasureFeatureMethodType">Complex Type: <strong>ExternalReferenceMeasureFeatureMethodType</strong>
+</a>
+</li>
+<li>
+<a href="#type_GageMeasureFeatureMethodType">Complex Type: <strong>GageMeasureFeatureMethodType</strong>
+</a>
+</li>
+<li>
+<a href="#type_HaltActionType">Complex Type: <strong>HaltActionType</strong>
+</a>
+</li>
+<li>
+<a href="#type_IfActionGroupType">Complex Type: <strong>IfActionGroupType</strong>
+</a>
+</li>
+<li>
+<a href="#type_ImageInstructionType">Complex Type: <strong>ImageInstructionType</strong>
+</a>
+</li>
+<li>
+<a href="#type_LaserRadarMeasureFeatureMethodType">Complex Type: <strong>LaserRadarMeasureFeatureMethodType</strong>
+</a>
+</li>
+<li>
+<a href="#type_LaserTrackerMeasureFeatureMethodType">Complex Type: <strong>LaserTrackerMeasureFeatureMethodType</strong>
+</a>
+</li>
+<li>
+<a href="#type_LocalVariablesType">Complex Type: <strong>LocalVariablesType</strong>
+</a>
+</li>
+<li>
+<a href="#type_ManualMeasureFeatureMethodType">Complex Type: <strong>ManualMeasureFeatureMethodType</strong>
+</a>
+</li>
+<li>
+<a href="#type_MeasurandBaseType">Complex Type: <strong>MeasurandBaseType</strong>
+</a>
+</li>
+<li>
+<a href="#type_MeasurandsType">Complex Type: <strong>MeasurandsType</strong>
+</a>
+</li>
+<li>
+<a href="#type_MeasureActionGroupFunctionType">Complex Type: <strong>MeasureActionGroupFunctionType</strong>
+</a>
+</li>
+<li>
+<a href="#type_MeasureEvaluateAllActionType">Complex Type: <strong>MeasureEvaluateAllActionType</strong>
+</a>
+</li>
+<li>
+<a href="#type_MeasureEvaluateSpecifiedActionType">Complex Type: <strong>MeasureEvaluateSpecifiedActionType</strong>
+</a>
+</li>
+<li>
+<a href="#type_MeasureFeatureMethodBaseType">Complex Type: <strong>MeasureFeatureMethodBaseType</strong>
+</a>
+</li>
+<li>
+<a href="#type_MeasureSpecifiedFeaturesActionType">Complex Type: <strong>MeasureSpecifiedFeaturesActionType</strong>
+</a>
+</li>
+<li>
+<a href="#type_MeasureSpecifiedMeasurandsActionType">Complex Type: <strong>MeasureSpecifiedMeasurandsActionType</strong>
+</a>
+</li>
+<li>
+<a href="#type_MicroscopeMeasureFeatureMethodType">Complex Type: <strong>MicroscopeMeasureFeatureMethodType</strong>
+</a>
+</li>
+<li>
+<a href="#type_NumberedPlanElementsType">Complex Type: <strong>NumberedPlanElementsType</strong>
+</a>
+</li>
+<li>
+<a href="#type_NumberedPlanElementType">Complex Type: <strong>NumberedPlanElementType</strong>
+</a>
+</li>
+<li>
+<a href="#type_OneOfActionGroupType">Complex Type: <strong>OneOfActionGroupType</strong>
+</a>
+</li>
+<li>
+<a href="#type_OrderedActionGroupType">Complex Type: <strong>OrderedActionGroupType</strong>
+</a>
+</li>
+<li>
+<a href="#type_OtherMeasureFeatureMethodType">Complex Type: <strong>OtherMeasureFeatureMethodType</strong>
+</a>
+</li>
+<li>
+<a href="#type_PartiallyOrderedActionGroupType">Complex Type: <strong>PartiallyOrderedActionGroupType</strong>
+</a>
+</li>
+<li>
+<a href="#type_PickSomeActionGroupType">Complex Type: <strong>PickSomeActionGroupType</strong>
+</a>
+</li>
+<li>
+<a href="#type_PlanElementBaseType">Complex Type: <strong>PlanElementBaseType</strong>
+</a>
+</li>
+<li>
+<a href="#type_PlanType">Complex Type: <strong>PlanType</strong>
+</a>
+</li>
+<li>
+<a href="#type_PredecessorsType">Complex Type: <strong>PredecessorsType</strong>
+</a>
+</li>
+<li>
+<a href="#type_ProfileProjectorMeasureFeatureMethodType">Complex Type: <strong>ProfileProjectorMeasureFeatureMethodType</strong>
+</a>
+</li>
+<li>
+<a href="#type_StepsWithPredecessorsType">Complex Type: <strong>StepsWithPredecessorsType</strong>
+</a>
+</li>
+<li>
+<a href="#type_StepWithPredecessorsType">Complex Type: <strong>StepWithPredecessorsType</strong>
+</a>
+</li>
+<li>
+<a href="#type_TestAndPlanElementType">Complex Type: <strong>TestAndPlanElementType</strong>
+</a>
+</li>
+<li>
+<a href="#type_TextInstructionType">Complex Type: <strong>TextInstructionType</strong>
+</a>
+</li>
+<li>
+<a href="#type_TheodoliteMeasureFeatureMethodType">Complex Type: <strong>TheodoliteMeasureFeatureMethodType</strong>
+</a>
+</li>
+<li>
+<a href="#type_TokenParameterValueType">Complex Type: <strong>TokenParameterValueType</strong>
+</a>
+</li>
+<li>
+<a href="#type_UniversalLengthMeasureFeatureMethodType">Complex Type: <strong>UniversalLengthMeasureFeatureMethodType</strong>
+</a>
+</li>
+<li>
+<a href="#type_UnnumberedPlanElementsType">Complex Type: <strong>UnnumberedPlanElementsType</strong>
+</a>
+</li>
+<li>
+<a href="#type_UnorderedActionGroupType">Complex Type: <strong>UnorderedActionGroupType</strong>
+</a>
+</li>
+<li>
+<a href="#type_VariableDeclarationType">Complex Type: <strong>VariableDeclarationType</strong>
+</a>
+</li>
+<li>
+<a href="#type_VariableSetType">Complex Type: <strong>VariableSetType</strong>
+</a>
+</li>
+<li>
+<a href="#type_VariableValueType">Complex Type: <strong>VariableValueType</strong>
+</a>
+</li>
+<li>
+<a href="#type_VideoInstructionType">Complex Type: <strong>VideoInstructionType</strong>
+</a>
+</li>
+<li>
+<a href="#type_WhileActionGroupType">Complex Type: <strong>WhileActionGroupType</strong>
+</a>
+</li>
+<li>
+<a href="#type_WorkInstructionBaseType">Complex Type: <strong>WorkInstructionBaseType</strong>
+</a>
+</li>
+<li>
+<a href="#type_WorkInstructionsType">Complex Type: <strong>WorkInstructionsType</strong>
+</a>
+</li>
+<li>
+<a href="#type_MeasureActionGroupFunctionEnumType">Simple Type: <strong>MeasureActionGroupFunctionEnumType</strong>
+</a>
+</li>
+</ul>
+</li>
+</ul>
+<ul id="legendTOC" style="margin-top: 0em">
+<li><a href="#Legend">Legend</a></li>
+</ul>
+<ul id="glossaryTOC" style="margin-top: 0em">
+<li><a href="#Glossary">Glossary</a></li>
+</ul>
+<div style="text-align: right; clear: both;"><a href="#top">top</a></div>
+<hr />
+<h2><a name="SchemaProperties">Schema Document Properties</a></h2>
+<table class="properties">
+<tr>
+<th>
+<a title="Look up 'Target Namespace' in glossary" href="#term_TargetNS">Target Namespace</a>
+</th>
+<td>
+<span class="targetNS">http://qifstandards.org/xsd/qif3</span>
+</td>
+</tr>
+<tr>
+<th>Version</th>
+<td>3.0.0</td>
+</tr>
+<tr>
+<th>Element and Attribute Namespaces</th>
+<td>
+<ul>
+<li>Global element and attribute declarations belong to this schema's target namespace.</li>
+<li>By default, local element declarations belong to this schema's target namespace.</li>
+<li>By default, local attribute declarations have no namespace.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th>Schema Composition</th>
+<td>
+<ul>
+<li>This schema includes components from the following schema document(s):<ul>
+<li>../QIFLibrary/IntermediatesPMI.xsd</li>
+<li>../QIFLibrary/GenericExpressions.xsd</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th>Documentation</th>
+<td>
+      The QIFPlan.xsd schema file defines the global Plan element, which is
+      the root of a measurement plan. The schema file also contains the
+      definitions of some of the types used in a Plan and a number of
+      key/keyref pairs that constrain references used in a Plan. In all
+      keys, the items that are collected must be unique within the
+      collection.
+    </td>
+</tr>
+</table>
+<h3>Declared Namespaces</h3>
+<table class="namespaces">
+<tr>
+<th>Prefix</th>
+<th>Namespace</th>
+</tr>
+<tr>
+<td>
+<a name="ns_">Default namespace</a>
+</td>
+<td>
+<span class="targetNS">http://qifstandards.org/xsd/qif3</span>
+</td>
+</tr>
+<tr>
+<td>
+<a name="ns_xml">xml</a>
+</td>
+<td>http://www.w3.org/XML/1998/namespace</td>
+</tr>
+<tr>
+<td>
+<a name="ns_xs">xs</a>
+</td>
+<td>http://www.w3.org/2001/XMLSchema</td>
+</tr>
+<tr>
+<td>
+<a name="ns_t">t</a>
+</td>
+<td>
+<span class="targetNS">http://qifstandards.org/xsd/qif3</span>
+</td>
+</tr>
+</table>
+<div class="schemaComponent box">
+<div>
+<input type="button" id="schema_scbox_button" class="control" onclick="switchState('schema_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span>
+</div>
+<div id="schema_scbox" class="contents">
+<div style="margin-left: 0em">&lt;<span class="scTag">xs:schema</span> <span class="scTag">targetNamespace</span>="<span class="scContent">http://qifstandards.org/xsd/qif3</span>" <span class="scTag">elementFormDefault</span>="<span class="scContent">qualified</span>" <span class="scTag">attributeFormDefault</span>="<span class="scContent">unqualified</span>" <span class="scTag">version</span>="<span class="scContent">3.0.0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:include</span> <span class="scTag">schemaLocation</span>="<span class="scContent">../QIFLibrary/IntermediatesPMI.xsd</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:include</span> <span class="scTag">schemaLocation</span>="<span class="scContent">../QIFLibrary/GenericExpressions.xsd</span>"/&gt;</div><div class="scContent" style="margin-left: 1.5em">...</div>&lt;/<span class="scTag">xs:schema</span>&gt;</div></div>
+<script type="text/javascript">
+<!--
+setState('schema_scbox', false);
+// -->
+</script>
+</div>
+<div style="text-align: right; clear: both;"><a href="#top">top</a></div>
+<hr />
+<h2><a name="SchemaDeclarations">Global Declarations</a></h2>
+<h3>Element: <a name="element_ActionMethod" class="name">ActionMethod</a>
+</h3>
+<table class="hierarchy">
+<tr>
+<td>
+<ul>
+<li>
+<em>The following elements can be used wherever this element is referenced:</em>
+<ul><li><a title="Jump to &quot;AutocollimatorMeasureFeatureMethod&quot; element declaration." href="#element_AutocollimatorMeasureFeatureMethod">AutocollimatorMeasureFeatureMethod</a></li><li><a title="Jump to &quot;CalibratedComparatorMeasureFeatureMethod&quot; element declaration." href="#element_CalibratedComparatorMeasureFeatureMethod">CalibratedComparatorMeasureFeatureMethod</a></li><li><a title="Jump to &quot;CoordinateMeasureFeatureMethod&quot; element declaration." href="#element_CoordinateMeasureFeatureMethod">CoordinateMeasureFeatureMethod</a></li><li><a title="Jump to &quot;ComputedTomographyMeasureFeatureMethod&quot; element declaration." href="#element_ComputedTomographyMeasureFeatureMethod">ComputedTomographyMeasureFeatureMethod</a></li><li><a title="Jump to &quot;ExternalReferenceMeasureFeatureMethod&quot; element declaration." href="#element_ExternalReferenceMeasureFeatureMethod">ExternalReferenceMeasureFeatureMethod</a></li><li><a title="Jump to &quot;GageMeasureFeatureMethod&quot; element declaration." href="#element_GageMeasureFeatureMethod">GageMeasureFeatureMethod</a></li><li><a title="Jump to &quot;LaserRadarMeasureFeatureMethod&quot; element declaration." href="#element_LaserRadarMeasureFeatureMethod">LaserRadarMeasureFeatureMethod</a></li><li><a title="Jump to &quot;LaserTrackerMeasureFeatureMethod&quot; element declaration." href="#element_LaserTrackerMeasureFeatureMethod">LaserTrackerMeasureFeatureMethod</a></li><li><a title="Jump to &quot;ManualMeasureFeatureMethod&quot; element declaration." href="#element_ManualMeasureFeatureMethod">ManualMeasureFeatureMethod</a></li><li><a title="Jump to &quot;MicroscopeMeasureFeatureMethod&quot; element declaration." href="#element_MicroscopeMeasureFeatureMethod">MicroscopeMeasureFeatureMethod</a></li><li><a title="Jump to &quot;ProfileProjectorMeasureFeatureMethod&quot; element declaration." href="#element_ProfileProjectorMeasureFeatureMethod">ProfileProjectorMeasureFeatureMethod</a></li><li><a title="Jump to &quot;TheodoliteMeasureFeatureMethod&quot; element declaration." href="#element_TheodoliteMeasureFeatureMethod">TheodoliteMeasureFeatureMethod</a></li><li><a title="Jump to &quot;UniversalLengthMeasureFeatureMethod&quot; element declaration." href="#element_UniversalLengthMeasureFeatureMethod">UniversalLengthMeasureFeatureMethod</a></li><li><a title="Jump to &quot;OtherMeasureFeatureMethod&quot; element declaration." href="#element_OtherMeasureFeatureMethod">OtherMeasureFeatureMethod</a></li></ul></li>
+</ul>
+</td>
+</tr>
+</table>
+<table class="properties">
+<tr>
+<th>Name</th>
+<td>ActionMethod</td>
+</tr>
+<tr>
+<th>Type</th>
+<td>
+<span class="type">
+<a title="Jump to &quot;ActionMethodBaseType&quot; type definition." href="#type_ActionMethodBaseType">ActionMethodBaseType</a>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a title="Look up 'Nillable' in glossary" href="#term_Nillable">Nillable</a>
+</th>
+<td>no</td>
+</tr>
+<tr>
+<th>
+<a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+</th>
+<td>yes</td>
+</tr>
+<tr>
+<th>Documentation</th>
+<td>
+        The global ActionMethod element (to be used via 'ref') is a
+        single action method. This element may be replaced (as
+        provided by substitution group declarations) by any of the
+        following elements representing types of action method:
+          AutocollimatorMeasureFeatureMethod
+          CalibratedComparatorMeasureFeatureMethod
+          CoordinateMeasureFeatureMethod
+          ComputedTomographyMeasureFeatureMethod
+          ExternalReferenceMeasureFeatureMethod
+          GageMeasureFeatureMethod
+          LaserRadarMeasureFeatureMethod
+          LaserTrackerMeasureFeatureMethod
+          ManualMeasureFeatureMethod
+          MicroscopeMeasureFeatureMethod
+          ProfileProjectorMeasureFeatureMethod
+          TheodoliteMeasureFeatureMethod
+          UniversalLengthMeasureFeatureMethod
+          OtherMeasureFeatureMethod
+      </td>
+</tr>
+</table>
+<div class="sample box">
+<div>
+<input type="button" id="element_ActionMethod_xibox_button" class="control" onclick="switchState('element_ActionMethod_xibox'); return false;" style="display: none" /> <span class="caption">XML Instance Representation</span>
+</div>
+<div id="element_ActionMethod_xibox" class="contents">
+<div style="margin-left: 0em">&lt;ActionMethod<br /><span style="margin-left: 0.5em"> id="<span class="type"><a title="&quot;QIFIdType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;QIFIdType&quot; type definition could not be found.');">QIFIdType</a></span> <span class="occurs">[1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('The id attribute is the QIF id of the action method, used for referencing.'); viewDocumentation('Attribute', 'id', docArray);">?</a>"</span>&gt; <br /><div style="margin-left: 1.5em">&lt;ChosenResourceIds&gt; <span class="type"><a title="&quot;ArrayReferenceType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;ArrayReferenceType&quot; type definition could not be found.');">ArrayReferenceType</a></span> &lt;/ChosenResourceIds&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('The optional ChosenResourceIds element gives the QIF ids of resources to be used to perform the method, for example, one of the Fixtures in the MeasurementResources in the Plan. The resources identified in this element by an instance of ActionMethodBaseType may be the same as or different from resources identified by the PreferredResourcesIds element of an instance of ActionBaseType that contains the ActionMethodBaseType instance.'); viewDocumentation('Element', 'ChosenResourceIds', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;WorkInstructionIds&gt; <span class="type"><a title="&quot;ArrayReferenceType&quot; type definition could not be found." href="javascript:void(0)" onclick="alert('&quot;ArrayReferenceType&quot; type definition could not be found.');">ArrayReferenceType</a></span> &lt;/WorkInstructionIds&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('The optional WorkInstructionIds element gives the QIF ids of work instructions required to perform the action method.'); viewDocumentation('Element', 'WorkInstructionIds', docArray);">?</a></div><div style="margin-left: 1.5em">&lt;<a title="&quot;Attributes&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Attributes&quot; element declaration could not be found.');">Attributes</a>&gt; ... &lt;/<a title="&quot;Attributes&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;Attributes&quot; element declaration could not be found.');">Attributes</a>&gt; <span class="occurs">[0..1]</span> <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('The optional Attributes element contains user defined attributes (typified, binary array, or XML structured).'); viewDocumentation('Element', 'Attributes', docArray);">?</a></div>&lt;/ActionMethod&gt;</div></div>
+<script type="text/javascript">
+<!--
+setState('element_ActionMethod_xibox', true);
+// -->
+</script>
+</div>
+<div class="schemaComponent box">
+<div>
+<input type="button" id="element_ActionMethod_scbox_button" class="control" onclick="switchState('element_ActionMethod_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span>
+</div>
+<div id="element_ActionMethod_scbox" class="contents">
+<div style="margin-left: 0em">&lt;<span class="scTag">xs:element</span> <span class="scTag">name</span>="<span class="scContent">ActionMethod</span>" <span class="scTag">type</span>="<span class="scContent"><span class="type"><a title="Jump to &quot;ActionMethodBaseType&quot; type definition." href="#type_ActionMethodBaseType">ActionMethodBaseType</a></span></span>" <span class="scTag">abstract</span>="<span class="scContent">true</span>"/&gt;</div></div>
+<script type="text/javascript">
+<!--
+setState('element_ActionMethod_scbox', false);
+// -->
+</script>
+</div>
+<div style="text-align: right; clear: both;"><a href="#top">top</a></div>
+<hr />
+<h3>Element: <a name="element_ArithmeticParameterValue" class="name">ArithmeticParameterValue</a>
+</h3>
+<table class="hierarchy">
+<tr>
+<td>
+<ul>
+<li>
+<em>This element can be used wherever the following element is referenced:</em>
+<ul>
+<li>
+<a title="&quot;ArithmeticExpression&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ArithmeticExpression&quot; element declaration could not be found.');">ArithmeticExpression</a>
+</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+<table class="properties">
+<tr>
+<th>Name</th>
+<td>ArithmeticParameterValue</td>
+</tr>
+<tr>
+<th>Type</th>
+<td>
+<span class="type">
+<a title="Jump to &quot;ArithmeticParameterValueType&quot; type definition." href="#type_ArithmeticParameterValueType">ArithmeticParameterValueType</a>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a title="Look up 'Nillable' in glossary" href="#term_Nillable">Nillable</a>
+</th>
+<td>no</td>
+</tr>
+<tr>
+<th>
+<a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+</th>
+<td>no</td>
+</tr>
+</table>

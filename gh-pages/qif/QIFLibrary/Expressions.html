@@ -1,0 +1,1047 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>XML Schema Documentation</title>
+<meta http-equiv="Content-Type" content="text/xml; charset=iso-8859-1" />
+<style type="text/css">
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* More-configurable styles */
+
+/******** General ********/
+
+/* Document body */
+body {
+   color: Black;
+   background-color: White;
+   font-family: Arial, sans-serif;
+   font-size: 10pt;
+}
+/* Horizontal rules */
+hr {
+   color: black;
+}
+/* Document title */
+h1 {
+   font-size: 18pt;
+   letter-spacing: 2px;
+   border-bottom: 1px #ccc solid;
+   padding-top: 5px;
+   padding-bottom: 5px;
+}
+/* Main section headers */
+h2 {
+   font-size: 14pt;
+   letter-spacing: 1px;
+}
+/* Sub-section headers */
+h3, h3 a, h3 span {
+   font-size: 12pt;
+   font-weight: bold;
+   color: black;
+}
+/* Table displaying the properties of the schema components or the
+   schema document itself */
+table.properties th, table.properties th a {
+   color: black;
+   background-color: #F99; /* Pink */
+}
+table.properties td {
+   background-color: #eee; /* Gray */
+}
+
+
+/******** Table of Contents Section ********/
+
+/* Controls for switching between printing and viewing modes */
+div#printerControls {
+   color: #963; /* Orange-brown */
+}
+/* Controls that can collapse or expand all XML Instance
+   Representation and Schema Component Representation boxes */
+div#globalControls {
+   border: 2px solid #999;
+}
+
+
+/******** Schema Document Properties Section ********/
+
+/* Table displaying the namespaces declared in the schema */
+table.namespaces th {
+   background-color: #ccc;
+}
+table.namespaces td {
+   background-color: #eee;
+}
+/* Target namespace of the schema */
+span.targetNS {
+   color: #06C;
+   font-weight: bold;
+}
+
+
+/******** Schema Components' Sections ********/
+
+/* Name of schema component */
+.name {
+   color: #F93; /* Orange */
+}
+
+/* Hierarchy table */
+table.hierarchy {
+   border: 2px solid #999; /* Gray */
+}
+
+/* XML Instance Representation table */
+div.sample div.contents {
+   border: 2px dashed black;
+}
+
+/* Schema Component Representation table */
+div.schemaComponent div.contents {
+   border: 2px black solid;
+}
+
+
+/******** Glossary Section ********/
+
+/* Glossary Terms */
+.glossaryTerm {
+   color: #036; /* Blue */
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Printer-version styles */
+
+@media print {
+
+/* Ensures that controls are hidden when printing */
+div#printerControls {
+   visibility: hidden;
+}
+div#globalControls {
+   visibility: hidden;
+}
+#legend {
+   display: none;
+}
+#legendTOC {
+   display: none;
+}
+#glossary {
+   display: none;
+}
+#glossaryTOC {
+   display: none;
+}
+
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Base styles */
+
+/******** General ********/
+
+/* Unordered lists */
+ul {
+   margin-left: 1.5em;
+   margin-bottom: 0em;
+}
+/* Tables */
+table {
+   margin-top: 10px;
+   margin-bottom: 10px;
+   margin-left: 2px;
+   margin-right: 2px;
+}
+table th, table td {
+   font-size: 10pt;
+   vertical-align: top;
+   padding-top: 3px;
+   padding-bottom: 3px;
+   padding-left: 10px;
+   padding-right: 10px;
+}
+table th {
+   font-weight: bold;
+   text-align: left;
+}
+/* Table displaying the properties of the schema components or the
+   schema document itself */
+table.properties {
+   width: 90%;
+}
+table.properties th {
+   width: 30%;
+}
+/* Boxes that can make its content appear and disappear*/
+div.box {
+   margin: 1em;
+}
+   /* Box caption */
+div.box span.caption {
+   font-weight: bold;
+}
+   /* Button to open and close the box */
+div.box input.control {
+   width: 1.4em;
+   height: 1.4em;
+   text-align: center;
+   vertical-align: middle;
+   font-size: 11pt;
+}
+   /* Box contents */
+div.box div.contents {
+   margin-top: 3px;
+}
+
+
+/******** Table of Contents Section ********/
+
+/* Controls for switching between printing and viewing modes */
+div#printerControls {
+   white-space: nowrap;
+   font-weight: bold;
+   padding: 5px;
+   margin: 5px;
+}
+/* Controls that can collapse or expand all XML Instance
+   Representation and Schema Component Representation boxes */
+div#globalControls {
+   padding: 10px;
+   margin: 5px;
+}
+
+
+/******** Schema Document Properties Section ********/
+
+/* Table displaying the namespaces declared in the schema */
+table.namespaces th {
+}
+table.namespaces td {
+}
+/* Target namespace of the schema */
+span.targetNS {
+}
+
+
+/******** Schema Components' Sections ********/
+
+/* Name of schema component */
+.name {
+}
+
+/* Hierarchy table */
+table.hierarchy {
+   width: 90%;
+}
+table.hierarchy th {
+   font-weight: normal;
+   font-style: italic;
+   width: 20%;
+}
+table.hierarchy th, table.hierarchy td {
+   padding: 5px;
+}
+
+/* XML Instance Representation table */
+div.sample {
+   width: 90%;
+}
+div.sample div.contents {
+   padding: 5px;
+   font-family: Courier New, sans-serif;
+   font-size: 10pt;
+}
+   /* Normal elements and attributes */
+div.sample div.contents, div.sample div.contents a {
+   color: black;
+}
+   /* Group Headers */
+div.sample div.contents .group, div.sample div.contents .group a {
+   color: #999; /* Light gray */
+}
+   /* Type Information */
+div.sample div.contents .type, div.sample div.contents .type a {
+   color: #999; /* Light gray */
+}
+   /* Occurrence Information */
+div.sample div.contents .occurs, div.sample div.contents .occurs a {
+   color: #999; /* Light gray */
+}
+   /* Fixed values */
+div.sample div.contents .fixed {
+   color: #063; /* Green */
+   font-weight: bold;
+}
+   /* Simple type constraints */
+div.sample div.contents .constraint, div.sample div.contents .constraint a {
+   color: #999; /* Light gray */
+}
+   /* Elements and attributes inherited from base type */
+div.sample div.contents .inherited, div.sample div.contents .inherited a {
+   color: #666; /* Dark gray */
+}
+   /* Elements and attributes added to or changed from base type */
+div.sample div.contents .newFields {
+   font-weight: bold;
+}
+   /* Other type of information */
+div.sample div.contents .other, div.sample div.contents .other a {
+   color: #369; /* Blue */
+   font-style: italic;
+}
+   /* Link to open up window displaying documentation */
+div.sample div.contents a.documentation {
+   text-decoration: none;
+   padding-left: 3px;
+   padding-right: 3px;
+   padding-top: 0px;
+   padding-bottom: 0px;
+   font-weight: bold;
+   font-size: 11pt;
+   background-color: #FFD;
+   color: #069;
+}
+   /* Invert colors when hovering over link to open up window 
+      displaying documentation */
+div.sample div.contents a.documentation:hover {
+   color: #FFD;
+   background-color: #069;
+}
+
+/* Schema Component Representation table */
+div.schemaComponent {
+   width: 90%;
+}
+div.schemaComponent div.contents {
+   font-family: Courier New, sans-serif;
+   font-size: 10pt;
+   padding: 5px;
+}
+   /* Syntax characters */
+div.schemaComponent div.contents {
+   color: #00f; /* blue */
+}
+   /* Element and attribute tags */
+div.schemaComponent div.contents .scTag {
+   color: #933; /* maroon */
+}
+   /* Element and attribute content */
+div.schemaComponent div.contents .scContent, div.schemaComponent div.contents .scContent a {
+   color: black;
+   font-weight: bold;
+}
+   /* Comments */
+div.schemaComponent div.contents .comment {
+   color: #999; /* Light gray */
+}
+
+/******** Legend Section ********/
+
+div#legend table, div#legend div {
+   margin-bottom: 3px;
+}
+div#legend div.hint {
+   color: #999; /* Light gray */
+   width: 90%;
+   margin-left: 1em;
+   margin-bottom: 2em;
+}
+
+
+/******** Glossary Section ********/
+
+/* Glossary Terms */
+.glossaryTerm {
+   font-weight: bold;
+}
+
+
+/******** Footer ********/
+
+.footer {
+   font-size: 8pt;
+}
+</style>
+<script type="text/javascript">
+<!--
+/* IDs of XML Instance Representation boxes */
+var xiBoxes = new Array('type_SamplingCategoryIsType_xibox', 'type_FeatureIsDatumType_xibox', 'type_FeatureIsInternalType_xibox', 'type_CharacteristicIsType_xibox', 'type_FeatureTypeIsType_xibox', 'type_ShapeClassIsType_xibox', 'type_PointSamplingStrategyEnumBaseType_xibox', 'type_PointPointSamplingStrategyEnumType_xibox', 'type_OpenCurvePointSamplingStrategyEnumType_xibox', 'type_ClosedCurvePointSamplingStrategyEnumType_xibox', 'type_PointDefinedPointSamplingStrategyEnumType_xibox', 'type_ConePointSamplingStrategyEnumType_xibox', 'type_ElongatedCylinderPointSamplingStrategyEnumType_xibox', 'type_ExtrudedCrossSectionPointSamplingStrategyEnumType_xibox', 'type_SpherePointSamplingStrategyEnumType_xibox', 'type_SurfaceOfRevolutionPointSamplingStrategyEnumType_xibox', 'type_PlanePointSamplingStrategyEnumType_xibox', 'type_CharacteristicTypeEnumType_xibox', 'type_FeatureTypeEnumType_xibox', 'type_DMEClassNameEnumType_xibox', 'type_ArithmeticComparisonEnumType_xibox', 'element_CharacteristicIs_xibox', 'element_FeatureIsDatum_xibox', 'element_FeatureIsInternal_xibox', 'element_FeatureTypeIs_xibox', 'element_SamplingCategoryIs_xibox', 'element_ShapeClassIs_xibox', 'type_ArithmeticParameterBaseType_xibox', 'type_ArithmeticFeatureParameterType_xibox', 'type_ArithmeticCharacteristicParameterType_xibox', 'type_ArithmeticDMEParameterType_xibox', 'type_ArithmeticPartParameterType_xibox', 'type_CharacteristicToleranceType_xibox', 'type_FeatureLengthType_xibox', 'type_FeatureAreaType_xibox', 'type_FeatureSizeType_xibox', 'element_ArithmeticFeatureParameter_xibox', 'element_ArithmeticCharacteristicParameter_xibox', 'element_ArithmeticDMEParameter_xibox', 'element_ArithmeticPartParameter_xibox', 'element_CharacteristicTolerance_xibox', 'element_FeatureLength_xibox', 'element_FeatureArea_xibox', 'element_FeatureSize_xibox');
+/* IDs of Schema Component Representation boxes */
+var scBoxes = new Array('schema_scbox', 'type_SamplingCategoryIsType_scbox', 'type_FeatureIsDatumType_scbox', 'type_FeatureIsInternalType_scbox', 'type_CharacteristicIsType_scbox', 'type_FeatureTypeIsType_scbox', 'type_ShapeClassIsType_scbox', 'type_PointSamplingStrategyEnumBaseType_scbox', 'type_PointPointSamplingStrategyEnumType_scbox', 'type_OpenCurvePointSamplingStrategyEnumType_scbox', 'type_ClosedCurvePointSamplingStrategyEnumType_scbox', 'type_PointDefinedPointSamplingStrategyEnumType_scbox', 'type_ConePointSamplingStrategyEnumType_scbox', 'type_ElongatedCylinderPointSamplingStrategyEnumType_scbox', 'type_ExtrudedCrossSectionPointSamplingStrategyEnumType_scbox', 'type_SpherePointSamplingStrategyEnumType_scbox', 'type_SurfaceOfRevolutionPointSamplingStrategyEnumType_scbox', 'type_PlanePointSamplingStrategyEnumType_scbox', 'type_CharacteristicTypeEnumType_scbox', 'type_FeatureTypeEnumType_scbox', 'type_DMEClassNameEnumType_scbox', 'type_ArithmeticComparisonEnumType_scbox', 'element_CharacteristicIs_scbox', 'element_FeatureIsDatum_scbox', 'element_FeatureIsInternal_scbox', 'element_FeatureTypeIs_scbox', 'element_SamplingCategoryIs_scbox', 'element_ShapeClassIs_scbox', 'type_ArithmeticParameterBaseType_scbox', 'type_ArithmeticFeatureParameterType_scbox', 'type_ArithmeticCharacteristicParameterType_scbox', 'type_ArithmeticDMEParameterType_scbox', 'type_ArithmeticPartParameterType_scbox', 'type_CharacteristicToleranceType_scbox', 'type_FeatureLengthType_scbox', 'type_FeatureAreaType_scbox', 'type_FeatureSizeType_scbox', 'element_ArithmeticFeatureParameter_scbox', 'element_ArithmeticCharacteristicParameter_scbox', 'element_ArithmeticDMEParameter_scbox', 'element_ArithmeticPartParameter_scbox', 'element_CharacteristicTolerance_scbox', 'element_FeatureLength_scbox', 'element_FeatureArea_scbox', 'element_FeatureSize_scbox');
+
+/**
+ * Can get the ID of the button controlling
+ * a collapseable box by concatenating
+ * this string onto the ID of the box itself.
+ */
+var B_SFIX = "_button";
+
+/**
+ * Counter of documentation windows
+ * Used to give each window a unique name
+ */
+var windowCount = 0;
+
+/**
+ * Returns an element in the current HTML document.
+ * 
+ * @param elementID Identifier of HTML element
+ * @return               HTML element object
+ */
+function getElementObject(elementID) {
+    var elemObj = null;
+    if (document.getElementById) {
+        elemObj = document.getElementById(elementID);
+    }
+    return elemObj;
+}             
+
+/**
+ * Closes a collapseable box.
+ * 
+ * @param boxObj       Collapseable box
+ * @param buttonObj Button controlling box
+ */
+function closeBox(boxObj, buttonObj) {
+  if (boxObj == null || buttonObj == null) {
+     // Box or button not found
+  } else {
+     // Change 'display' CSS property of box
+     boxObj.style.display="none";
+
+     // Change text of button 
+     if (boxObj.style.display=="none") {
+        buttonObj.value=" + ";
+     }
+  }
+}
+
+/**
+ * Opens a collapseable box.
+ * 
+ * @param boxObj       Collapseable box
+ * @param buttonObj Button controlling box
+ */
+function openBox(boxObj, buttonObj) {
+  if (boxObj == null || buttonObj == null) {
+     // Box or button not found
+  } else {
+     // Change 'display' CSS property of box
+     boxObj.style.display="block";
+
+     // Change text of button
+     if (boxObj.style.display=="block") {
+        buttonObj.value=" - ";
+     }
+  }
+}
+
+/**
+ * Sets the state of a collapseable box.
+ * 
+ * @param boxID Identifier of box
+ * @param open If true, box is "opened",
+ *             Otherwise, box is "closed".
+ */
+function setState(boxID, open) {
+  var boxObj = getElementObject(boxID);
+  var buttonObj = getElementObject(boxID+B_SFIX);
+  if (boxObj == null || buttonObj == null) {
+     // Box or button not found
+  } else if (open) {
+     openBox(boxObj, buttonObj);
+     // Make button visible
+     buttonObj.style.display="inline";
+  } else {
+     closeBox(boxObj, buttonObj);
+     // Make button visible
+     buttonObj.style.display="inline";
+  }
+}
+
+/**
+ * Switches the state of a collapseable box, e.g.
+ * if it's opened, it'll be closed, and vice versa.
+ * 
+ * @param boxID Identifier of box
+ */
+function switchState(boxID) {
+  var boxObj = getElementObject(boxID);
+  var buttonObj = getElementObject(boxID+B_SFIX);
+  if (boxObj == null || buttonObj == null) {
+     // Box or button not found
+  } else if (boxObj.style.display=="none") {
+     // Box is closed, so open it
+     openBox(boxObj, buttonObj);
+  } else if (boxObj.style.display=="block") {
+     // Box is opened, so close it
+     closeBox(boxObj, buttonObj);
+  }
+}
+
+/**
+ * Closes all boxes in a given list.
+ * 
+ * @param boxList Array of box IDs
+ */
+function collapseAll(boxList) {
+  var idx;
+  for (idx = 0; idx < boxList.length; idx++) {
+     var boxObj = getElementObject(boxList[idx]);
+     var buttonObj = getElementObject(boxList[idx]+B_SFIX);
+     closeBox(boxObj, buttonObj);
+  }
+}
+
+/**
+ * Open all boxes in a given list.
+ * 
+ * @param boxList Array of box IDs
+ */
+function expandAll(boxList) {
+  var idx;
+  for (idx = 0; idx < boxList.length; idx++) {
+     var boxObj = getElementObject(boxList[idx]);
+     var buttonObj = getElementObject(boxList[idx]+B_SFIX);
+     openBox(boxObj, buttonObj);
+  }
+}
+
+/**
+ * Makes all the control buttons of boxes appear.
+ * 
+ * @param boxList Array of box IDs
+ */
+function viewControlButtons(boxList) {
+    var idx;
+    for (idx = 0; idx < boxList.length; idx++) {
+        buttonObj = getElementObject(boxList[idx]+B_SFIX);
+        if (buttonObj != null) {
+            buttonObj.style.display = "inline";
+        }
+    }
+}
+
+/**
+ * Makes all the control buttons of boxes disappear.
+ * 
+ * @param boxList Array of box IDs
+ */
+function hideControlButtons(boxList) {
+    var idx;
+    for (idx = 0; idx < boxList.length; idx++) {
+        buttonObj = getElementObject(boxList[idx]+B_SFIX);
+        if (buttonObj != null) {
+            buttonObj.style.display = "none";
+        }
+    }
+}
+
+/**
+ * Sets the page for either printing mode
+ * or viewing mode. In printing mode, the page
+ * is made to be more readable when printing it out.
+ * In viewing mode, the page is more browsable.
+ *
+ * @param isPrinterVersion If true, display in
+ *                                 printing mode; otherwise, 
+ *                                 in viewing mode
+ */
+function displayMode(isPrinterVersion) {
+    var obj;
+    if (isPrinterVersion) {
+        // Hide global control buttons
+        obj = getElementObject("globalControls");
+        if (obj != null) {
+            obj.style.visibility = "hidden";
+        }
+        // Hide Legend
+        obj = getElementObject("legend");
+        if (obj != null) {
+            obj.style.display = "none";
+        }
+        obj = getElementObject("legendTOC");
+        if (obj != null) {
+            obj.style.display = "none";
+        }
+        // Hide Glossary
+        obj = getElementObject("glossary");
+        if (obj != null) {
+            obj.style.display = "none";
+        }
+        obj = getElementObject("glossaryTOC");
+        if (obj != null) {
+            obj.style.display = "none";
+        }
+
+        // Expand all XML Instance Representation tables
+        expandAll(xiBoxes);
+        // Expand all Schema Component Representation tables
+        expandAll(scBoxes);
+
+        // Hide Control buttons
+        hideControlButtons(xiBoxes);
+        hideControlButtons(scBoxes);
+    } else {
+        // View global control buttons
+        obj = getElementObject("globalControls");
+        if (obj != null) {
+            obj.style.visibility = "visible";
+        }
+        // View Legend
+        obj = getElementObject("legend");
+        if (obj != null) {
+            obj.style.display = "block";
+        }
+        obj = getElementObject("legendTOC");
+        if (obj != null) {
+            obj.style.display = "block";
+        }
+        // View Glossary
+        obj = getElementObject("glossary");
+        if (obj != null) {
+            obj.style.display = "block";
+        }
+        obj = getElementObject("glossaryTOC");
+        if (obj != null) {
+            obj.style.display = "block";
+        }
+
+        // Expand all XML Instance Representation tables
+        expandAll(xiBoxes);
+        // Collapse all Schema Component Representation tables
+        collapseAll(scBoxes);
+
+        // View Control buttons
+        viewControlButtons(xiBoxes);
+        viewControlButtons(scBoxes);
+    }
+}
+
+/**
+ * Opens up a window displaying the documentation
+ * of a schema component in the XML Instance
+ * Representation table.
+ * 
+ * @param compDesc      Description of schema component 
+ * @param compName      Name of schema component 
+ * @param docTextArray Array containing the paragraphs 
+ *                           of the new document
+ */
+function viewDocumentation(compDesc, compName, docTextArray) {
+  var width = 400;
+  var height = 200;
+  var locX = 100;
+  var locY = 200;
+
+  /* Generate content */
+  var actualText = "<html>";
+  actualText += "<head><title>";
+  actualText += compDesc;
+  if (compName != '') {
+     actualText += ": " + compName;
+  }
+  actualText += "</title></head>";
+  actualText += "<body bgcolor=\"#FFFFEE\">";
+  // Title
+  actualText += "<p style=\"font-family: Arial, sans-serif; font-size: 12pt; font-weight: bold; letter-spacing:1px;\">";
+  actualText += compDesc;
+  if (compName != '') {
+     actualText += ": <span style=\"color:#006699\">" + compName + "</span>";
+  }
+  actualText += "</p>";
+  // Documentation
+  var idx;
+  for (idx = 0; idx < docTextArray.length; idx++) {
+     actualText += "<p style=\"font-family: Arial, sans-serif; font-size: 10pt;\">" + docTextArray[idx] + "</p>";
+  }
+  // Link to close window
+  actualText += "<a href=\"javascript:void(0)\" onclick=\"window.close();\" style=\"font-family: Arial, sans-serif; font-size: 8pt;\">Close</a>";
+  actualText += "</body></html>";
+
+  /* Display window */
+  windowCount++;
+  var docWindow = window.open("", "documentation"+windowCount, "toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable,alwaysRaised,dependent,titlebar=no,width="+width+",height="+height+",screenX="+locX+",left="+locX+",screenY="+locY+",top="+locY);
+  docWindow.document.write(actualText);
+}
+
+// -->
+</script>
+</head>
+<body>
+<h1><a name="top">XML Schema Documentation</a></h1>
+<div style="float: right;">
+<div id="printerControls" style="display:none;">
+<input type="checkbox" onclick="displayMode(this.checked)" />Printer-friendly Version</div>
+<script type="text/javascript">
+<!--
+
+var pc = getElementObject("printerControls");
+if (pc != null) {
+   pc.style.display="block";
+}
+               
+// -->
+</script>
+<div id="globalControls" style="display:none">
+<strong>XML Instance Representation:</strong><br />
+<span style="margin-left: 1em; white-space: nowrap">[ <a href="javascript:void(0)" onclick="expandAll(xiBoxes)">Expand All</a> | <a href="javascript:void(0)" onclick="collapseAll(xiBoxes)">Collapse All</a> ]</span><br /><br />
+<strong>Schema Component Representation:</strong><br />
+<span style="margin-left: 1em; white-space: nowrap">[ <a href="javascript:void(0)" onclick="expandAll(scBoxes)">Expand All</a> | <a href="javascript:void(0)" onclick="collapseAll(scBoxes)">Collapse All</a> ]</span>
+</div>
+<script type="text/javascript">
+<!--
+
+var gc = getElementObject("globalControls");
+if (gc != null) {
+   gc.style.display="block";
+}
+               
+// -->
+</script>
+</div>
+<h2>Table of Contents</h2>
+<ul>
+<li>
+<a href="#SchemaProperties">Schema Document Properties</a>
+</li>
+<li><a href="#SchemaDeclarations">Global Declarations</a>
+<ul>
+<li>
+<a href="#element_ArithmeticCharacteristicParameter">Element: <strong>ArithmeticCharacteristicParameter</strong>
+</a>
+</li>
+<li>
+<a href="#element_ArithmeticDMEParameter">Element: <strong>ArithmeticDMEParameter</strong>
+</a>
+</li>
+<li>
+<a href="#element_ArithmeticFeatureParameter">Element: <strong>ArithmeticFeatureParameter</strong>
+</a>
+</li>
+<li>
+<a href="#element_ArithmeticPartParameter">Element: <strong>ArithmeticPartParameter</strong>
+</a>
+</li>
+<li>
+<a href="#element_CharacteristicIs">Element: <strong>CharacteristicIs</strong>
+</a>
+</li>
+<li>
+<a href="#element_CharacteristicTolerance">Element: <strong>CharacteristicTolerance</strong>
+</a>
+</li>
+<li>
+<a href="#element_FeatureArea">Element: <strong>FeatureArea</strong>
+</a>
+</li>
+<li>
+<a href="#element_FeatureIsDatum">Element: <strong>FeatureIsDatum</strong>
+</a>
+</li>
+<li>
+<a href="#element_FeatureIsInternal">Element: <strong>FeatureIsInternal</strong>
+</a>
+</li>
+<li>
+<a href="#element_FeatureLength">Element: <strong>FeatureLength</strong>
+</a>
+</li>
+<li>
+<a href="#element_FeatureSize">Element: <strong>FeatureSize</strong>
+</a>
+</li>
+<li>
+<a href="#element_FeatureTypeIs">Element: <strong>FeatureTypeIs</strong>
+</a>
+</li>
+<li>
+<a href="#element_SamplingCategoryIs">Element: <strong>SamplingCategoryIs</strong>
+</a>
+</li>
+<li>
+<a href="#element_ShapeClassIs">Element: <strong>ShapeClassIs</strong>
+</a>
+</li>
+</ul>
+</li>
+<li><a href="#SchemaDefinitions">Global Definitions</a>
+<ul>
+<li>
+<a href="#type_ArithmeticCharacteristicParameterType">Complex Type: <strong>ArithmeticCharacteristicParameterType</strong>
+</a>
+</li>
+<li>
+<a href="#type_ArithmeticDMEParameterType">Complex Type: <strong>ArithmeticDMEParameterType</strong>
+</a>
+</li>
+<li>
+<a href="#type_ArithmeticFeatureParameterType">Complex Type: <strong>ArithmeticFeatureParameterType</strong>
+</a>
+</li>
+<li>
+<a href="#type_ArithmeticParameterBaseType">Complex Type: <strong>ArithmeticParameterBaseType</strong>
+</a>
+</li>
+<li>
+<a href="#type_ArithmeticPartParameterType">Complex Type: <strong>ArithmeticPartParameterType</strong>
+</a>
+</li>
+<li>
+<a href="#type_CharacteristicIsType">Complex Type: <strong>CharacteristicIsType</strong>
+</a>
+</li>
+<li>
+<a href="#type_CharacteristicToleranceType">Complex Type: <strong>CharacteristicToleranceType</strong>
+</a>
+</li>
+<li>
+<a href="#type_FeatureAreaType">Complex Type: <strong>FeatureAreaType</strong>
+</a>
+</li>
+<li>
+<a href="#type_FeatureIsDatumType">Complex Type: <strong>FeatureIsDatumType</strong>
+</a>
+</li>
+<li>
+<a href="#type_FeatureIsInternalType">Complex Type: <strong>FeatureIsInternalType</strong>
+</a>
+</li>
+<li>
+<a href="#type_FeatureLengthType">Complex Type: <strong>FeatureLengthType</strong>
+</a>
+</li>
+<li>
+<a href="#type_FeatureSizeType">Complex Type: <strong>FeatureSizeType</strong>
+</a>
+</li>
+<li>
+<a href="#type_FeatureTypeIsType">Complex Type: <strong>FeatureTypeIsType</strong>
+</a>
+</li>
+<li>
+<a href="#type_SamplingCategoryIsType">Complex Type: <strong>SamplingCategoryIsType</strong>
+</a>
+</li>
+<li>
+<a href="#type_ShapeClassIsType">Complex Type: <strong>ShapeClassIsType</strong>
+</a>
+</li>
+<li>
+<a href="#type_ArithmeticComparisonEnumType">Simple Type: <strong>ArithmeticComparisonEnumType</strong>
+</a>
+</li>
+<li>
+<a href="#type_CharacteristicTypeEnumType">Simple Type: <strong>CharacteristicTypeEnumType</strong>
+</a>
+</li>
+<li>
+<a href="#type_ClosedCurvePointSamplingStrategyEnumType">Simple Type: <strong>ClosedCurvePointSamplingStrategyEnumType</strong>
+</a>
+</li>
+<li>
+<a href="#type_ConePointSamplingStrategyEnumType">Simple Type: <strong>ConePointSamplingStrategyEnumType</strong>
+</a>
+</li>
+<li>
+<a href="#type_DMEClassNameEnumType">Simple Type: <strong>DMEClassNameEnumType</strong>
+</a>
+</li>
+<li>
+<a href="#type_ElongatedCylinderPointSamplingStrategyEnumType">Simple Type: <strong>ElongatedCylinderPointSamplingStrategyEnumType</strong>
+</a>
+</li>
+<li>
+<a href="#type_ExtrudedCrossSectionPointSamplingStrategyEnumType">Simple Type: <strong>ExtrudedCrossSectionPointSamplingStrategyEnumType</strong>
+</a>
+</li>
+<li>
+<a href="#type_FeatureTypeEnumType">Simple Type: <strong>FeatureTypeEnumType</strong>
+</a>
+</li>
+<li>
+<a href="#type_OpenCurvePointSamplingStrategyEnumType">Simple Type: <strong>OpenCurvePointSamplingStrategyEnumType</strong>
+</a>
+</li>
+<li>
+<a href="#type_PlanePointSamplingStrategyEnumType">Simple Type: <strong>PlanePointSamplingStrategyEnumType</strong>
+</a>
+</li>
+<li>
+<a href="#type_PointDefinedPointSamplingStrategyEnumType">Simple Type: <strong>PointDefinedPointSamplingStrategyEnumType</strong>
+</a>
+</li>
+<li>
+<a href="#type_PointPointSamplingStrategyEnumType">Simple Type: <strong>PointPointSamplingStrategyEnumType</strong>
+</a>
+</li>
+<li>
+<a href="#type_PointSamplingStrategyEnumBaseType">Simple Type: <strong>PointSamplingStrategyEnumBaseType</strong>
+</a>
+</li>
+<li>
+<a href="#type_SpherePointSamplingStrategyEnumType">Simple Type: <strong>SpherePointSamplingStrategyEnumType</strong>
+</a>
+</li>
+<li>
+<a href="#type_SurfaceOfRevolutionPointSamplingStrategyEnumType">Simple Type: <strong>SurfaceOfRevolutionPointSamplingStrategyEnumType</strong>
+</a>
+</li>
+</ul>
+</li>
+</ul>
+<ul id="legendTOC" style="margin-top: 0em">
+<li><a href="#Legend">Legend</a></li>
+</ul>
+<ul id="glossaryTOC" style="margin-top: 0em">
+<li><a href="#Glossary">Glossary</a></li>
+</ul>
+<div style="text-align: right; clear: both;"><a href="#top">top</a></div>
+<hr />
+<h2><a name="SchemaProperties">Schema Document Properties</a></h2>
+<table class="properties">
+<tr>
+<th>
+<a title="Look up 'Target Namespace' in glossary" href="#term_TargetNS">Target Namespace</a>
+</th>
+<td>
+<span class="targetNS">http://qifstandards.org/xsd/qif3</span>
+</td>
+</tr>
+<tr>
+<th>Version</th>
+<td>3.0.0</td>
+</tr>
+<tr>
+<th>Element and Attribute Namespaces</th>
+<td>
+<ul>
+<li>Global element and attribute declarations belong to this schema's target namespace.</li>
+<li>By default, local element declarations belong to this schema's target namespace.</li>
+<li>By default, local attribute declarations have no namespace.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th>Schema Composition</th>
+<td>
+<ul>
+<li>This schema includes components from the following schema document(s):<ul>
+<li>../QIFLibrary/GenericExpressions.xsd</li>
+<li>../QIFLibrary/PrimitivesPMI.xsd</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th>Documentation</th>
+<td>
+      This file defines QIF-specific Boolean expressions and arithmetic
+      expressions. The initial intent is that these expressions should
+      support writing QIF rules. The file includes specialized Boolean
+      expressions for identifying the types of features and
+      characteristics.
+
+      It is assumed that a system consuming an instance file containing
+      expressions will be capable of evaluating the expressions.
+    </td>
+</tr>
+</table>
+<h3>Declared Namespaces</h3>
+<table class="namespaces">
+<tr>
+<th>Prefix</th>
+<th>Namespace</th>
+</tr>
+<tr>
+<td>
+<a name="ns_">Default namespace</a>
+</td>
+<td>
+<span class="targetNS">http://qifstandards.org/xsd/qif3</span>
+</td>
+</tr>
+<tr>
+<td>
+<a name="ns_xml">xml</a>
+</td>
+<td>http://www.w3.org/XML/1998/namespace</td>
+</tr>
+<tr>
+<td>
+<a name="ns_xs">xs</a>
+</td>
+<td>http://www.w3.org/2001/XMLSchema</td>
+</tr>
+<tr>
+<td>
+<a name="ns_t">t</a>
+</td>
+<td>
+<span class="targetNS">http://qifstandards.org/xsd/qif3</span>
+</td>
+</tr>
+</table>
+<div class="schemaComponent box">
+<div>
+<input type="button" id="schema_scbox_button" class="control" onclick="switchState('schema_scbox'); return false;" style="display: none" /> <span class="caption">Schema Component Representation</span>
+</div>
+<div id="schema_scbox" class="contents">
+<div style="margin-left: 0em">&lt;<span class="scTag">xs:schema</span> <span class="scTag">targetNamespace</span>="<span class="scContent">http://qifstandards.org/xsd/qif3</span>" <span class="scTag">elementFormDefault</span>="<span class="scContent">qualified</span>" <span class="scTag">attributeFormDefault</span>="<span class="scContent">unqualified</span>" <span class="scTag">version</span>="<span class="scContent">3.0.0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:include</span> <span class="scTag">schemaLocation</span>="<span class="scContent">../QIFLibrary/GenericExpressions.xsd</span>"/&gt;</div><div style="margin-left: 1.5em">&lt;<span class="scTag">xs:include</span> <span class="scTag">schemaLocation</span>="<span class="scContent">../QIFLibrary/PrimitivesPMI.xsd</span>"/&gt;</div><div class="scContent" style="margin-left: 1.5em">...</div>&lt;/<span class="scTag">xs:schema</span>&gt;</div></div>
+<script type="text/javascript">
+<!--
+setState('schema_scbox', false);
+// -->
+</script>
+</div>
+<div style="text-align: right; clear: both;"><a href="#top">top</a></div>
+<hr />
+<h2><a name="SchemaDeclarations">Global Declarations</a></h2>
+<h3>Element: <a name="element_ArithmeticCharacteristicParameter" class="name">ArithmeticCharacteristicParameter</a>
+</h3>
+<table class="hierarchy">
+<tr>
+<td>
+<ul>
+<li>
+<em>This element can be used wherever the following element is referenced:</em>
+<ul>
+<li>
+<a title="&quot;ArithmeticExpression&quot; element declaration could not be found." href="javascript:void(0)" onclick="alert('&quot;ArithmeticExpression&quot; element declaration could not be found.');">ArithmeticExpression</a>
+</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+<table class="properties">
+<tr>
+<th>Name</th>
+<td>ArithmeticCharacteristicParameter</td>
+</tr>
+<tr>
+<th>Type</th>
+<td>
+<span class="type">
+<a title="Jump to &quot;ArithmeticCharacteristicParameterType&quot; type definition." href="#type_ArithmeticCharacteristicParameterType">ArithmeticCharacteristicParameterType</a>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a title="Look up 'Nillable' in glossary" href="#term_Nillable">Nillable</a>
+</th>
+<td>no</td>
+</tr>
+<tr>
+<th>
+<a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+</th>
+<td>no</td>
+</tr>
+</table>
